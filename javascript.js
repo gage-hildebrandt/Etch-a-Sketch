@@ -1,17 +1,22 @@
-const container = document.createElement('div');
-container.classList.add('container');
-document.body.appendChild(container);
+const container = document.getElementById('grid-container');
 
-for (let i = 0; i < 16; i++) {
-    const row = document.createElement('div');
-    row.classList.add('row');
-    container.appendChild(row);
+// Function to create the grid
+function createGrid(rows, cols) {
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            const gridItem = document.createElement('div');
+            gridItem.classList.add('grid-item');
+            container.appendChild(gridItem); // Append each grid item to the container
+        }
+    }
 }
 
-for (let j = 0; j < 16; j++) {
-    const square = document.createElement('div');
-    square.classList.add('square');
-    row.appendChild(square);
-}
+// Call the createGrid function to create a 16x16 grid
+createGrid(16, 16);
+
+
+// Add border to the grid container
+container.style.border = '1px solid black';
+container.style.backgroundColor = 'red';
 
 
